@@ -1,22 +1,24 @@
-NASA APOD Telegram Bot Documentation
-Overview
-This Telegram bot fetches images from NASA's Astronomy Picture of the Day (APOD) API and sends them along with descriptions to users at a scheduled time.
+# **NASA APOD Telegram Bot Documentation**
 
-Features
-Retrieves daily space images from NASA's APOD API.
-Sends the image and its description to users.
-Automatically schedules messages at a predefined time.
-Uses schedule for automated task execution.
-Installation & Setup
-Prerequisites
+## **Overview**
+This Telegram bot fetches images from NASA's *Astronomy Picture of the Day (APOD)* API and sends them along with descriptions to users at a scheduled time.
+
+## **Features**
+- Retrieves daily space images from NASA's APOD API.
+- Sends the image and its description to users.
+- Automatically schedules messages at a predefined time.
+- Uses `schedule` for automated task execution.
+
+---
+
+## **Installation & Setup**
+
+### **Prerequisites**
 Ensure you have the following installed:
-
-Python 3.x
-Required Python libraries:
-sh
-Copy
-Edit
-pip install requests pyTelegramBotAPI schedule
+- Python 3.x
+- Required Python libraries:
+  ```sh
+  pip install requests pyTelegramBotAPI schedule
 A Telegram Bot Token (created via BotFather).
 Configuration
 Replace tg_token with your actual Telegram Bot Token:
@@ -82,7 +84,7 @@ Copy
 Edit
 def get_schedule(period, id):
     if period == 'everyday':
-        schedule.every().days.at('20:50').do(get_photo)
+        schedule.every().day.at('20:50').do(get_photo)
     
     while True:
         print('start')
@@ -118,4 +120,3 @@ Use environment variables for secure API key storage.
 Implement error handling for API failures.
 Conclusion
 This Telegram bot automates the delivery of NASA’s daily space images to users via the APOD API. The bot is built using Python, telebot, and schedule, allowing it to fetch and send images at a scheduled time. Future improvements can enhance user customization and scalability.
-
